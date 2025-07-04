@@ -1,0 +1,18 @@
+
+services:
+  # Serviço da aplicação FastApi
+  app:
+    build: . # Constrói a imagem a partir do Dockerfile na raiz do projeto
+    container_name: api # Nomeia o contêiner
+    ports:
+      - "8000:8000" # mapeia a porta 8000 do contêiner para a porta 8000 do host
+    volumes:
+      - .:/app # monta o diretório atual do host dentro do contêiner
+               # isso é ótimo para o desenvolvimento, pois as alterações no código
+               # serão refletidas no contêiner devido ao --reload do uvicorn
+    #environment:
+     # - PYTHONUNBUFFERED=1 # garante que os logs do python apareçam imediatamente
+                           # adicione outras variáveis de ambiente aqui
+                           # Ex: - API_KEY=sua_chave_secreta
+    #networks:
+     # - app-network
