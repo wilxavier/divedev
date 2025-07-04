@@ -101,6 +101,15 @@ Apply the new group membership. You can either:
 
    Aqui você pode testar todos os endpoints da API de forma interativa.
 
+   Ctrl + c -> derruba o servidor
+
+---
+CI - Continuos Integration 
+CD - Continuos Deployment
+
+---
+
+
 ---
 hub.docker.com
 imagem mais leve alpine -> alpine mais recente
@@ -119,3 +128,35 @@ imagem mais leve alpine -> alpine mais recente
 - Para reiniciar o banco, basta apagar o arquivo `escola.db` (isso apagará todos os dados).
 
 ---
+Day 2
+build e dopois run
+compose faz tudo
+
+criacao do arquivo docker compose
+   comando
+      docker compose up
+      ou
+      docker compose -d (background)
+      https://docs.docker.com/compose/file-watch/
+
+      repo.new no github
+
+Day 3
+
+7. **Execute a aplicação:**
+   ```sh
+   sudo apt-get update
+   sudo apt-get install apt-transport-https ca-certificates gnupg curl
+   curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+   echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+   sudo apt-get update && sudo apt-get install google-cloud-cli
+
+   
+   gcloud auth login
+   gcloud config set project  PROJECT_ID
+   gcloud run deploy --port=8000
+   ```
+
+
+
+
